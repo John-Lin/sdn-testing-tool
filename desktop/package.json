@@ -4,6 +4,8 @@
   "description": "Packet Generator",
   "main": "main.js",
   "scripts": {
+    "build-osx": "electron-packager . TestingTool --platform=darwin --arch=x64 --version=0.34.3 --overwrite",
+    "build-linux": "electron-packager . TestingTool  --platform=linux --arch=x64 --version=0.34.3 --overwrite",
     "start": "electron ."
   },
   "author": "John-Lin",
@@ -13,6 +15,7 @@
     "request": "^2.60.0"
   },
   "devDependencies": {
+    "electron-packager": "^5.1.1",
     "electron-prebuilt": "^0.34.3"
   }
 }
