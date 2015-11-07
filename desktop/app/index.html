@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css">
+		<title>Software Defined Network Testing Tool</title>
+    <style type="text/css">
+      img {
+        -webkit-filter: invert(1);
+        filter: invert(1);
+      }
+   </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      window.$ = window.jQuery = require('jquery');
+    </script>
+    <script type="text/javascript" src="index.js"></script>
+    <div class="ui container">
+      <div class="ui inverted menu">
+
+          <div href="#" class="header item">
+            <img class="logo" src="../static/images/logo.svg">
+            &nbsp;&nbsp;&nbsp;&nbsp;SDN Testing Tool
+          </div>
+          <a class="item active" data-tab="first">Testing Tool</a>
+        </div>
+
+			<div class="ui bottom attached tab segment active" data-tab="first">
+	      <!-- Description -->
+	      <div class="ui stacked segment">
+	        <h4 class="ui header">Software Defined Network Testing Tool</h4>
+          <p>This is a tool for network performance measurement through OpenFlow.</p>
+	        <p>This measurement tool is to  generate customizable data streams with customizable throughputs. The tool also provides an user-friendly interface for throughput analytics. The approach is implemented as an OpenFlow APP and only generic OpenFlow switches are required. Compared to commercial solutions, like Spirent and IXIA, this tool is cheaper and more extensible. Compared to software-based solutions, like iperf/iperf3, this tool cost almost nothing in CPU loading and northbound interface. Moreover, this tool is designed as a virtual testing controller and can be easily deployed to cloud systems.</p>
+          <p>Enjoy this network performance measurement tool. <br /> We Welcome Your Feedback &amp; Thoughts.</p>
+	      </div>
+
+        <div class="ui stacked segment">
+          <h4 class="ui header">Settings</h4>
+          <div class="ui form">
+            <div class="fields">
+
+              <!-- DUT Ingress Port -->
+              <div class="required field" id='dutInPortField'>
+                <label>DUT Ingress Port</label>
+                <input type="number" maxlength="2" id='outputPort' min="3" max="48" value="13">
+              </div>
+
+              <!-- Packet payload size input -->
+              <div class="field" id='pktSizeField'>
+                <label>IP Payload Size</label>
+                <input type="number" maxlength="4" id='pktSize' min="0" max="1500" step="100" value="0">
+              </div>
+
+              <div class="field">
+                <label>Source MAC address</label>
+                <input type="text" maxlength="3">
+              </div>
+
+              <div class="field">
+                <label>Destination MAC address</label>
+                <input type="text" maxlength="15">
+              </div>
+
+            </div>
+
+            <div class="fields">
+              <div class="field">
+                <label>Source IP address</label>
+                <input type="text" maxlength="15">
+              </div>
+              <div class="field">
+                <label>Destination IP address</label>
+                <input type="text" maxlength="15">
+              </div>
+
+              <div class="field">
+                <label>UDP source port</label>
+                <input type="text" maxlength="15">
+              </div>
+              <div class="field">
+                <label>UDP destination port</label>
+                <input type="text" maxlength="15">
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Data payload</label>
+              <input type="text" maxlength="15">
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="ui stacked segment">
+          <h4 class="ui header">Statistics</h4>
+          <div class="inline fields">
+            <!-- <div class="ui label">
+              <i class="line chart icon"></i>
+              <span class="packet-count">0</span>
+              <a class="detail">packets</a>
+            </div>
+            <div class="ui label">
+              <i class="exchange icon" ></i>
+              <span class="pps">0</span>
+              <a class="detail">packets/sec</a>
+            </div> -->
+            <div class="ui label">
+              <i class="exchange icon"></i>
+              <span class="mbps">0</span>
+              <a class="detail">Mbps/sec</a>
+            </div>
+          </div>
+        </div>
+
+
+	      <div class="ui form">
+
+	        <!-- Sending button -->
+	        <div class="inline field" style="text-align:right;">
+            <button class="ui toggle button" id="send-btn">Send</button>
+	        </div>
+
+	      </div>
+	    </div>
+
+    </div>
+    </div>
+
+  <!-- Semantic Dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
+
+  </body>
+</html>
